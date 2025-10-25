@@ -1,6 +1,6 @@
 # Astro Starter Kit: Basics
 
-## Inpired by Midudev, https://www.youtube.com/@midudev
+## Inspired by Midudev, https://www.youtube.com/@midudev
 
 ```sh
 pnpm create astro@latest -- --template basics
