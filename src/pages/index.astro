@@ -1,0 +1,93 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import HeroLogo from '@/assets/hero-key-logo.webp'
+import HeroBackground from '@/assets/hero-key-background.webp'
+import LogoVI from '@/assets/logo-vi.svg'
+import PlayButtonIcon from '@/assets/play-button.svg'
+import LogoDivided from '@/assets/logo-divided.svg'
+
+---
+
+<Layout>
+
+	<section class="h-screen">
+		<div id="logo-mask" class="fixed top-0 w-full h-screen">
+			<section>
+				<picture
+					id="hero"
+					class="h-screen scale-125 block overflow-hidden fixed"
+				>
+					<img 
+						id="hero-logo" 
+						src={HeroLogo.src} 
+						class="absolute w-full h-full object-cover"
+					/>
+
+					<img 
+						id="hero-bg" 
+						src={HeroBackground.src}
+						class="w-full h-full object-cover"	
+					/>
+						
+				</picture>
+			</section>
+		</div>
+
+
+		<div
+			class="fixed flex flex-col items-center justify-between h-screen px-18 py-15 w-full"
+		>
+			<header class="flex justify-between w-full">
+				<LogoVI class="size-10 text-white hover:text-yellow-100 transition-colors duration-300 cursor-pointer" />
+				<span>Menú</span>
+			</header>
+
+			
+				<button class="inset-0 m-auto cursor-pointer inline-block" >
+					<a href="https://www.youtube.com/watch?v=VQRLujxTm3c&t=1s" target="_blank" class="inline-block">
+					<PlayButtonIcon 
+						id="hero-play-button"
+						class="text-white m-auto size-30 mt-2 backdrop-blur-lg rounded-full hover:scale-110 transition-transform duration-500"
+					/>
+					</a>
+				</button>
+			
+
+
+			<footer 
+				id="hero-footer"
+				class="absolute bottom-8 m-auto drop-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_4px_#000]"
+			>
+				<LogoDivided class="text-white w-35"/>
+				<span 
+					class="absolute uppercase top-[51px] tracking-[5px] whitespace-nowrap text-center font-semibold
+					left-1/2 -translate-x-1/2"
+				>
+					Ver el tráiler 2
+				</span>
+			</footer>
+			
+
+		</div>
+	</section>
+
+	
+
+	
+	
+</Layout>
+
+<style>
+	#logo-mask{
+		background: white;
+		mask-image: url("/logo-stack.svg");
+		mask-position: center 25%;
+		mask-repeat: no-repeat;
+		mask-size: clamp(5000vh, 3500%, 0vh);
+	}
+</style>
+
+<script>
+	import { initHeroScroll } from "@/scripts/heroScroll.js";
+	initHeroScroll();
+</script>
